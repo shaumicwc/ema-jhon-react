@@ -2,10 +2,11 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
+    height: 100vh;
     margin-left: 24px;
     position: sticky;
     top: 28px;
-    background-color: gray;
+    background-color: #f1c27c;
     border-radius: 20px;
     padding: 0 20px 10px;
     
@@ -14,7 +15,7 @@
 .order-summary{
     font-size: 25px;
     line-height: 30px;
-    color: #1C2B35;
+    color: #000000;
     text-align: center;
     margin-top: 28px;
     margin-bottom: 50px;  
@@ -24,7 +25,7 @@
     font-size: 17px;
     line-height: 20px;
     letter-spacing: 0.005em;
-    color: #2A414F;
+    color: #000000;
 }
 
 .grand-total{
