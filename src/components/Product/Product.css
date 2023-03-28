@@ -1,5 +1,106 @@
 .product {
     width: 300px;
+    height: 508px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    position: relative;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    height: 164px;
+    /* use height so that justify content works in a same space */
+    justify-content: space-between;
+}
+
+.product img {
+    width: 286px;
+    height: 286px;
+    border-radius: 10px;
+    margin: 7px;
+    border-radius: 8px;
+}
+
+.product-name {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
+    margin: 12px 14px;
+}
+
+.product-price {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
+    margin: 12px 14px;
+}
+
+.manufacturer {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.004em;
+    color: #2A414F;
+    margin: 12px 14px;
+}
+
+.ratings {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.004em;
+    color: #2A414F;
+    margin: 12px 14px;
+}
+
+.btn-cart {
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0px;
+    border: none;
+    border-top: 1px solid #95A0A7;
+    border-radius: 0 0 8px 8px;
+    color: #0E161A;
+    background-color: #FFE0B3;
+    font-size: 16px;
+}
+
+.btn-cart:hover {
+    background-color: #ffb84e;
+}
+
+.btn-text {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .product {
+    width: 300px;
     height: 510px;
     border: 1px solid #95A0A7;
     border-radius: 8px;
@@ -26,15 +127,17 @@
 }
 
 .product-info {
-    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+    border: 2px solid;
+    height: 157px;
 }
 
-.product-info {
-    margin-top: 5px;
-}
-
-btn-cart {
-    width: 100%;
+.btn-cart {
+    color: #0E161A;
+    height: 100%;
     background: #FFE0B3;
     border: 1px solid #95A0A7;
     border-radius: 0px 0px 8px 8px;
@@ -44,4 +147,4 @@ btn-cart {
 
 .btn-cart:hover {
     background-color: orange;
-}
+} */
