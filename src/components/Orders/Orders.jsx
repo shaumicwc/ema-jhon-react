@@ -14,6 +14,10 @@ const Orders = () => {
     removeFromDb(id);
 }
 
+const handleClearCart = () => {
+    setCart([]);
+}
+
     return (
         <div className='shop-container'>
             <div className='review-container'>
@@ -27,7 +31,14 @@ const Orders = () => {
             </div>
 
             <div className='cart-container'>
-                <Cart cart={savedCart}></Cart>
+                <Cart
+                    cart={cart}
+                    handleClearCart={handleClearCart}
+                >
+                    <Link className='proceed-link' to="/checkout">
+                        <button className='btn-proceed'>Proceed Checkout</button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );
