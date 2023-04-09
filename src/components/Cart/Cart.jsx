@@ -5,13 +5,23 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 
-const Cart = ({ cart, handleClearCart }) => {
+const Cart = ({ cart, clearCart, children }) => {
 
+    // let totalPrice = 0;
+    // let totalShipping = 0;
+    // let quantity = 0;
+    // console.log(quantity)
+    // for (const product of cart) {
+    //     // product.quantity = product.quantity || 1;
+    //     totalPrice = totalPrice + product.price * product.quantity;
+    //     totalShipping = totalShipping + product.shipping;
+    //     quantity = quantity + product.quantity;
+    // }
     let totalPrice = 0;
     let totalShipping = 0;
     let quantity = 0;
-    for (const product of cart) {
-        product.quantity = product.quantity || 1;
+    for(const product of cart){
+        // product.quantity = product.quantity || 1;
         totalPrice = totalPrice + product.price * product.quantity;
         totalShipping = totalShipping + product.shipping;
         quantity = quantity + product.quantity;
@@ -30,7 +40,7 @@ const Cart = ({ cart, handleClearCart }) => {
                 <p>Total Shipping Charge: ${totalShipping}</p>
                 <p>Tax: ${tax.toFixed(2)}</p>
                 <h6 className='grand-total'>Grand Total: ${grandTotal.toFixed(2)}</h6>
-                <button onClick={handleClearCart} className='btn-clear-cart'>
+                <button onClick={clearCart} className='btn-clear-cart'>
                     <span>Clear Cart </span>
                     <FontAwesomeIcon icon={faTrashAlt} />
                 </button>

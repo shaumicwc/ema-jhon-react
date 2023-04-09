@@ -1,16 +1,14 @@
 import React from 'react';
 import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
-import Shop from '../Shop/Shop';
+import './Home.css'
 
 
 const Home = () => {
     return (
         <div>
           <Header></Header>
-          <Outlet></Outlet>  
-          <Shop></Shop>
-         
+          <Outlet></Outlet>    
         </div>
     );
 };

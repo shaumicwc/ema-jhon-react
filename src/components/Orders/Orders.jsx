@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './Orders.css'
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Orders = () => {
     const savedCart = useLoaderData();
-   const [cart, setCart] = useState([savedCart])
+   const [cart, setCart] = useState(savedCart)
 
    const handleRemoveFromCart = (id) => {
     //get all the item and set one out
@@ -13,8 +15,9 @@ const Orders = () => {
     setCart(remaining);
     removeFromDb(id);
 }
+console.log(savedCart)
 
-const handleClearCart = () => {
+const clearCart = () => {
     setCart([]);
     deleteShoppingCart();
 }
@@ -23,7 +26,7 @@ const handleClearCart = () => {
         <div className='shop-container'>
             <div className='review-container'>
                 {
-                    savedCart.map(product => <ReviewItem
+                    cart.map(product => <ReviewItem
                         key={product.id}
                         product={product}
                         handleRemoveFromCart={handleRemoveFromCart}
@@ -34,7 +37,7 @@ const handleClearCart = () => {
             <div className='cart-container'>
                 <Cart
                     cart={cart}
-                    handleClearCart={handleClearCart}
+                    clearCart={clearCart}
                 >
                     <Link className='proceed-link' to="/checkout">
                         <button className='btn-proceed'>Proceed Checkout</button>

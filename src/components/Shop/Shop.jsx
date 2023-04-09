@@ -38,17 +38,24 @@ const Shop = () => {
     }, [products])
 
     const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
+        let newCart = [];
+        const exists = cart.find( pd => pd.id === product.id)
+        if(!exists){
+            product.quantity = 1;
+            newCart = [...cart, product];
+        } else{
+            exists.quantity = exists.quantity + 1;
+            const remaining = cart.filter(pd => pd.id !== product.id);
+            newCart = [...remaining, product];
+        }
         setCart(newCart);
-        addToDb(product.name)
+        addToDb(product.id)
     }
 
-    const handleClearCart = () => {
+    const clearCart = () =>{
         setCart([]);
         deleteShoppingCart();
     }
-
-
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -67,11 +74,10 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart
                     cart={cart}
-                    handleClearCart = {handleClearCart}
+                    clearCart={clearCart}
                 >
-                    <Link to = '../Orders/Orders.jsx'>
-                        <button>Review Order</button>
-                    
+                    <Link to = '/orders' className='proceed-link'>
+                        <button className='btn-proceed'>Review Order</button>
                     </Link>
                 </Cart>
 

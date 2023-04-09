@@ -48,3 +48,9 @@
     justify-content: space-between;
     align-items: center;
 }
+@media (max-width: 568px) {
+    .btn-clear-cart{
+        height: 35px;
+        font-size: 15px;
+    }
+}

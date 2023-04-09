@@ -25,3 +25,23 @@
     justify-content: space-between;
     align-items: center;
 }
+/* class name have to be rearrange */
+@media (max-width: 568px) {
+    .shop-container {
+      grid-template-columns: 2fr 1fr;
+    }
+    .products-container {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
+    .cart-container{
+        margin-top: 10px;
+        width: 200px;
+        height: 55vh;
+    }
+    .review-order-btn{
+        width: 90%;
+        font-size: 15px;
+        height: 35px;
+    }
+  }

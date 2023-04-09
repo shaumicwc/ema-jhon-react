@@ -86,3 +86,37 @@
 .btn-text {
     margin-right: 10px;
 }
+/* class have to be rearrange */
+@media (max-width : 568px) {
+    .product {
+        width: 200px;
+        height: 370px;
+    }
+    .product img {
+        top: auto;
+        width: 186px;
+        height: 186px;
+        margin: 7px;
+        border-radius: 8px;
+    }
+    .product-name {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+    }
+    .product-info p{
+        margin-left: 0;
+        line-height: 8px
+    }
+    .btn-cart {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    .product-info{
+        margin-bottom: 25px;
+    }
+    .product{
+        height: auto;
+    }
+}

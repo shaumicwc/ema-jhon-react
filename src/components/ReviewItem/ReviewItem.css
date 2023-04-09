@@ -48,3 +48,20 @@
     color: #EB5757;
     font-size: 27px;
 }
+/* class name have to rearrange */
+@media (max-width: 568px) {
+    .review-item{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+    .review-item img{
+        width: 190px;
+        height: 190px;
+    }
+    .review-item-info{
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+
+}
