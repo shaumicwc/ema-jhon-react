@@ -16,6 +16,11 @@
 .header a:hover{
     color: goldenrod;
 }
+
+.text-white{
+    color: antiquewhite;
+    padding-left: 5px;
+}
 @media (max-width: 568px) {
     .header{
         height: auto;

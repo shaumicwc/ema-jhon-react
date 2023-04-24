@@ -1,26 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App'
 import './index.css'
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
 } from "react-router-dom";
 import Shop from './components/Shop/Shop';
 import Home from './components/Layout/Home';
 import Orders from './components/Orders/Orders';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
-import cartProductsLoader from './Loaders/cartProductsLoader';
+import cartProductsLoader from './loaders/cartProductsLoader';
 import Checkout from './components/Checkout/Checkout';
-import SignUpX from './components/SignUpX/SignUpX';
-import AuthProviders from './components/providers/AuthProviders';
 
+import AuthProvider from './components/providers/AuthProvider';
+import PrivateRoute from './routes/PrivateRoute';
+import SignUpX from './components/SignUpX/SignUpX';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home></Home>,
-    children : [
+    children: [
       {
         path: '/',
         element: <Shop></Shop>
@@ -32,28 +34,28 @@ const router = createBrowserRouter([
       },
       {
         path: 'inventory',
-        element: <Inventory></Inventory>
+        element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
       },
       {
-        path: 'Checkout',
-        element: <Checkout></Checkout>
+        path: 'checkout',
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
       },
       {
-        path:'login',
+        path: 'login',
         element: <Login></Login>
       },
       {
-        path:'signup',
+        path: 'signup',
         element: <SignUpX></SignUpX>
       }
     ]
-  },
-]);
+  }
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProviders>
-    <RouterProvider router={router}></RouterProvider>
-    </AuthProviders>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
